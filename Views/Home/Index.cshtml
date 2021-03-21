@@ -8,8 +8,50 @@
     <div class="container">
         <img src="~/me.jpg" style="height: 100%; width: 100%;" />
     </div>
-    <div class="container">
+    <div class="container pt-3">
         <h5>Nè hỏi thiệt nhé! Ăn gì mà đẹp zợ? ^^</h5>
     </div>
 
+    <div class="container pt-3">
+        <h3>Bạn muốn nói với tôi điều gì?</h3>
+        <form>
+            <div class="form-group">
+                <label for="name">Bạn là ai?</label>
+                <input type="text" class="form-control" id="name" placeholder="Tên hoặc danh xưng - có thể để trống">
+            </div>
+            <div class="form-group">
+                <label for="bodyMessage">Điều mà bạn muốn nói là gì?</label>
+                <textarea class="form-control" id="bodyMessage" rows="3"></textarea>
+            </div>
+
+        </form>
+        <button class="btn btn-primary" onclick="SendMessage()">Gửi</button>
+    </div>
+
+    <script>
+        function SendMessage() {
+            let name = document.getElementById("name").value;
+            let bodyMessage = document.getElementById("bodyMessage").value;
+            var dataJSON = { Name: name, BodyMessage: bodyMessage };
+            console.log(name, bodyMessage);
+            if (bodyMessage == null) {
+                alert("Không thể để trống Tin nhắn được");
+                return false;
+            }
+            $.ajax({
+                type: 'POST',
+                url: 'https://localhost:5001/mes',
+                dataType: 'json',
+                data: JSON.stringify(dataJSON),
+                contentType: "application/json",
+                succes: function (data) {
+                    alert("Gửi được rồi đó ^^");
+                },
+                error: function (ex) {
+                    alert(ex.responseText);
+                }
+            });
+        }
+        //"{\"data\":[{\"id\":1,\"name\":\"Toyota\"},{\"id\":2,\"name\":\"Volvo\"},{\"id\":3,\"name\":\"VinFast\"}]}"
+    </script>
 </div>

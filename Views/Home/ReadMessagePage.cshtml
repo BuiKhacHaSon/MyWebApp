@@ -1,0 +1,94 @@
+﻿@model IEnumerable<MyWebApp.Models.Message>
+
+@{
+    ViewData["Title"] = "ReadMessagePage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>ReadMessagePage</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BodyMessage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedAt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsRead)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BodyMessage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsRead)
+            </td>
+            <td>
+                <button class="btn btn-primary" onclick="Delete(@item.Id)">Xóa</button>|
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                <button class="btn btn-primary" onclick="CheckRead(@item.Id)">Read</button>|
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<script>
+    function Delete(id) {
+        console.log(id);
+        var dataJSON = {};
+        $.ajax({
+            type: 'DELETE',
+            url: 'https://localhost:5001/mes/' + id,
+            dataType: 'json',
+            data: JSON.stringify(dataJSON),
+            contentType: "application/json",
+            succes: function (data) {
+                alert("Xóa được rồi đó ^^");
+            },
+            error: function (ex) {
+                alert(ex.responseText);
+            }
+        });
+    }
+    function CheckRead(id) {
+        console.log(id);
+        var dataJSON = {};
+        $.ajax({
+            type: 'PUT',
+            url: 'https://localhost:5001/mes/' + id,
+            dataType: 'json',
+            data: JSON.stringify(dataJSON),
+            contentType: "application/json",
+            succes: function (data) {
+                alert("Check được rồi đó ^^");
+            },
+            error: function (ex) {
+                alert(ex.responseText);
+            }
+        });
+    }
+</script>
