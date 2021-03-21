@@ -63,7 +63,7 @@
         var dataJSON = {};
         $.ajax({
             type: 'DELETE',
-            url: 'https://localhost:5001/mes/' + id,
+            url: 'http://localhost:5001/mes/' + id,
             dataType: 'json',
             data: JSON.stringify(dataJSON),
             contentType: "application/json",
@@ -80,7 +80,7 @@
         var dataJSON = {};
         $.ajax({
             type: 'PUT',
-            url: 'https://localhost:5001/mes/' + id,
+            url: 'http://localhost:5001/mes/' + id,
             dataType: 'json',
             data: JSON.stringify(dataJSON),
             contentType: "application/json",

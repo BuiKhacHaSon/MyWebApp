@@ -37,7 +37,7 @@ namespace MyWebApp.Controllers
         {
             List<Message> lsMessage = new List<Message>();
             HttpClient httpClient = new HttpClient();
-            var apiResponse = await httpClient.GetAsync("https://localhost:5001/mes");
+            var apiResponse = await httpClient.GetAsync("http://localhost:5001/mes");
             try
             {
                 string response = await apiResponse.Content.ReadAsStringAsync();
@@ -56,7 +56,7 @@ namespace MyWebApp.Controllers
         {
             List<Message> lsMessage = new List<Message>();
             HttpClient httpClient = new HttpClient();
-            var apiResponse = await httpClient.GetAsync("https://localhost:5001/mes/new");
+            var apiResponse = await httpClient.GetAsync("http://localhost:5001/mes/new");
             try
             {
                 string response = await apiResponse.Content.ReadAsStringAsync();
@@ -75,14 +75,14 @@ namespace MyWebApp.Controllers
         {
             HttpClient httpClient = new HttpClient();
             var httpContent = new StringContent(null, Encoding.UTF8, "application/json"); ;
-            var apiResponse = await httpClient.PutAsync("https://localhost:5001/mes/" + id.ToString(), httpContent);
+            var apiResponse = await httpClient.PutAsync("http://localhost:5001/mes/" + id.ToString(), httpContent);
             return RedirectToAction("Index", "Home");
         }
 
         public async Task<IActionResult> Delte(int id)
         {
             HttpClient httpClient = new HttpClient();
-            var apiResponse = await httpClient.DeleteAsync("https://localhost:5001/mes/" + id.ToString());
+            var apiResponse = await httpClient.DeleteAsync("http://localhost:5001/mes/" + id.ToString());
             return RedirectToAction("Index", "Home");
         }
 
