@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using MyWebApp.Infrastructure;
 using MyWebApp.Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -37,7 +38,7 @@ namespace MyWebApp.Controllers
         {
             List<Message> lsMessage = new List<Message>();
             HttpClient httpClient = new HttpClient();
-            var apiResponse = await httpClient.GetAsync("http://localhost:5001/mes");
+            var apiResponse = await httpClient.GetAsync(Constants.APIUrl + "mes");
             try
             {
                 string response = await apiResponse.Content.ReadAsStringAsync();
@@ -56,7 +57,7 @@ namespace MyWebApp.Controllers
         {
             List<Message> lsMessage = new List<Message>();
             HttpClient httpClient = new HttpClient();
-            var apiResponse = await httpClient.GetAsync("http://localhost:5001/mes/new");
+            var apiResponse = await httpClient.GetAsync(Constants.APIUrl + "mes/new");
             try
             {
                 string response = await apiResponse.Content.ReadAsStringAsync();
@@ -75,14 +76,14 @@ namespace MyWebApp.Controllers
         {
             HttpClient httpClient = new HttpClient();
             var httpContent = new StringContent(null, Encoding.UTF8, "application/json"); ;
-            var apiResponse = await httpClient.PutAsync("http://localhost:5001/mes/" + id.ToString(), httpContent);
+            var apiResponse = await httpClient.PutAsync(Constants.APIUrl + "mes/" + id.ToString(), httpContent);
             return RedirectToAction("Index", "Home");
         }
 
         public async Task<IActionResult> Delte(int id)
         {
             HttpClient httpClient = new HttpClient();
-            var apiResponse = await httpClient.DeleteAsync("http://localhost:5001/mes/" + id.ToString());
+            var apiResponse = await httpClient.DeleteAsync(Constants.APIUrl + "mes/" + id.ToString());
             return RedirectToAction("Index", "Home");
         }
 
