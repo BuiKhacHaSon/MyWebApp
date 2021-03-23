@@ -51,13 +51,10 @@ button.accept-policy {
   line-height: inherit;
 }
 .text-animation-lyric {
-    padding-top: 60px;
+    padding-top: 160px;
 }
-@media(max-width: 768px) {
-    .text-animation-lyric {
-        padding-top: 160px;
-    }
-}
+
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
