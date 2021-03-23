@@ -1,10 +1,54 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="text-center">
     <h1 class="display-4">This is just a beginning</h1>
     <p>我是小宝贝</p>
+
+    <div class="container pt-3 pb-3">
+        <form>
+            <div class="container border">
+                <label for="form1">Thông tin <strong>của bạn</strong></label>
+                <div class="form-group" id="form1">
+                    <label for="name1">Tên của bạn: </label>
+                    <input type="text" class="form-control" id="name1" placeholder="Họ và Tên đầy đủ">
+                </div>
+                <div class="form-group">
+                    <label for="dob1">Ngày sinh: </label>
+                    <input type="text" class="form-control" id="dob1" placeholder="01/01/2021">
+                </div>
+                <div class="form-group">
+                    <label for="favorite1">Một trong những điều bạn thích nhất: </label>
+                    <input type="text" class="form-control" id="favorite1" placeholder="VD: Ăn, Ngủ, v.v..">
+                </div>
+            </div>
+            <div class="container border">
+                <label for="form2">Thông tin của <strong>nửa kia</strong></label>
+                <div class="form-group" id="form1">
+                    <label for="name2">Tên của ngưới đó: </label>
+                    <input type="text" class="form-control" id="name2" placeholder="Họ và Tên đầy đủ">
+                </div>
+                <div class="form-group">
+                    <label for="dob2">Ngày sinh: </label>
+                    <input type="text" class="form-control" id="dob2" placeholder="01/01/2021">
+                </div>
+                <div class="form-group">
+                    <label for="favorite2">Một trong những điều bạn biết người ấy thích nhất: </label>
+                    <input type="text" class="form-control" id="favorite2" placeholder="VD: Ăn, Ngủ, v.v..">
+                </div>
+            </div>
+            
+        </form>
+        <div class="container pt-2 pb-2">
+        <button class="btn btn-primary" id="btnCalculate">Tính ngay</button>
+            </div>
+        <div class="container" id="result">
+
+        </div>
+    </div>
+
     <div class="container">
         <img src="~/me.jpg" style="height: 100%; width: 100%;" />
     </div>
@@ -25,33 +69,84 @@
             </div>
 
         </form>
-        <button class="btn btn-primary" onclick="SendMessage()">Gửi</button>
+        <button class="btn btn-primary" onclick="SendMessage()" id="btnSend">Gửi</button>
     </div>
 
-    <script>
-        function SendMessage() {
-            let name = document.getElementById("name").value;
-            let bodyMessage = document.getElementById("bodyMessage").value;
-            var dataJSON = { Name: name, BodyMessage: bodyMessage };
-            console.log(name, bodyMessage);
-            if (bodyMessage == null) {
-                alert("Không thể để trống Tin nhắn được");
-                return false;
-            }
-            $.ajax({
-                type: 'POST',
-                url: 'https://api.buikhachason.com/mes',
-                dataType: 'json',
-                data: JSON.stringify(dataJSON),
-                contentType: "application/json",
-                succes: function (data) {
-                    alert("Gửi được rồi đó ^^");
-                },
-                error: function (ex) {
-                    alert(ex.responseText);
-                }
-            });
-        }
-        //"{\"data\":[{\"id\":1,\"name\":\"Toyota\"},{\"id\":2,\"name\":\"Volvo\"},{\"id\":3,\"name\":\"VinFast\"}]}"
-    </script>
+
 </div>
+<script>
+    
+    function SendMessage() {
+        let name = document.getElementById("name").value;
+        let bodyMessage = document.getElementById("bodyMessage").value;
+        var dataJSON = { Name: name, BodyMessage: bodyMessage };
+        console.log(name, bodyMessage);
+        if (bodyMessage == "") {
+            alert("Không thể để trống Tin nhắn được");
+            return false;
+        }
+
+        $.ajax({
+            type: 'POST',
+            url: 'https://api.buikhachason.com/mes',
+            dataType: 'json',
+            data: JSON.stringify(dataJSON),
+            contentType: "application/json",
+            complete: function (data) {
+                console.log(data);
+                alert("Gửi được rồi đó ^^");
+            },
+            error: function (ex) {
+                alert(ex.responseText);
+            }
+        });
+    }
+
+    $("#btnCalculate").on("click", function () {
+        Calculate();
+    });
+
+    function Calculate() {
+        let BaseAPIUrl = 'https://api.buikhachason.com/';
+        let name1 = document.getElementById("name1").value;
+        let dob1 = document.getElementById("dob1").value;
+        let fav1 = document.getElementById("favorite1").value;
+        let name2 = document.getElementById("name2").value;
+        let dob2 = document.getElementById("dob2").value;
+        let fav2 = document.getElementById("favorite2").value;
+        if (name1 == ""
+            || fav1 == ""
+            || dob1 == ""
+            || name2 == ""
+            || fav2 == ""
+            || dob2 == ""
+        ) {
+            alert("Nhập cho đầy đủ thông tin đi pa!");
+            return false;
+        }
+        var dataJSON = {
+            NameA: name1, DoBA: dob1, FavoriteA: fav1,
+            NameB: name2, DoBB: dob2, FavoriteB: fav2
+        };
+        console.log(dataJSON);
+        $.ajax({
+            type: 'POST',
+            url: 'https://api.buikhachason.com/cal',
+            dataType: 'json',
+            data: JSON.stringify(dataJSON),
+            contentType: "application/json",
+            complete: function (jqXHR, status) {
+                $("#result div").remove();
+                var data = $.parseJSON(jqXHR.responseText);
+                var row = `<div class="border"><h5>Kết quả: ` + data.result + `%</h5></div><div class="border"><p>` + data.message + `</p></div>`;
+                    $('#result').append(row);
+                console.log(row);
+                
+                    console.log(data);
+            },
+            error: function (ex) {
+                alert(ex.responseText);
+            }
+        });
+    }
+</script>
