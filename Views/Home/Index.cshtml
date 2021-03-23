@@ -75,11 +75,20 @@
 
 </div>
 <script>
+    let ip = 'hi';
+    $(document).ready(function () {
+        $.getJSON("https://api.ipify.org?format=json",
+            function (data) {
+                ip = data.ip;
+
+            }) 
+    });
     
+
     function SendMessage() {
         let name = document.getElementById("name").value;
         let bodyMessage = document.getElementById("bodyMessage").value;
-        var dataJSON = { Name: name, BodyMessage: bodyMessage };
+        var dataJSON = { Name: name, BodyMessage: bodyMessage, Agent: ip };
         console.log(name, bodyMessage);
         if (bodyMessage == "") {
             alert("Không thể để trống Tin nhắn được");
@@ -93,7 +102,7 @@
             data: JSON.stringify(dataJSON),
             contentType: "application/json",
             complete: function (data) {
-                console.log(data);
+                console.log(ip);
                 alert("Gửi được rồi đó ^^");
             },
             error: function (ex) {
