@@ -50,7 +50,14 @@ button.accept-policy {
   font-size: 1rem;
   line-height: inherit;
 }
-
+.text-animation-lyric {
+    padding-top: 60px;
+}
+@media(max-width: 768px) {
+    .text-animation-lyric {
+        padding-top: 160px;
+    }
+}
 /* Sticky footer styles
 -------------------------------------------------- */
 html {

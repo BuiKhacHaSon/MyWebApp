@@ -33,6 +33,11 @@ namespace MyWebApp.Controllers
             return View();
         }
 
+        public IActionResult ForMyPast()
+        {
+            return View();
+        }
+
         [Route("read")]
         public async Task<IActionResult> ReadMessagePage()
         {
@@ -72,6 +77,26 @@ namespace MyWebApp.Controllers
             return View(lsMessage);
         }
 
+        [Route("readcal")]
+        public async Task<IActionResult> ReadCalculationPage()
+        {
+            List<Calculation> ls = new List<Calculation>();
+            HttpClient httpClient = new HttpClient();
+            var apiResponse = await httpClient.GetAsync(Constants.APIUrl + "cal/cal");
+            try
+            {
+                string response = await apiResponse.Content.ReadAsStringAsync();
+                response = "{\"data\":" + response + "}";
+                JObject jObResponse = JObject.Parse(response);
+                ls = JsonConvert.DeserializeObject<List<Calculation>>(jObResponse["data"].ToString());
+            }
+            catch (Exception ex)
+            {
+                ls = null;
+            }
+            return View(ls);
+        }
+
         public async Task<IActionResult> CheckRead(int id)
         {
             HttpClient httpClient = new HttpClient();
@@ -79,7 +104,25 @@ namespace MyWebApp.Controllers
             var apiResponse = await httpClient.PutAsync(Constants.APIUrl + "mes/" + id.ToString(), httpContent);
             return RedirectToAction("Index", "Home");
         }
-
+        [Route("readnewcal")]
+        public async Task<IActionResult> ReadNewCalculationPage()
+        {
+            List<Calculation> lsMessage = new List<Calculation>();
+            HttpClient httpClient = new HttpClient();
+            var apiResponse = await httpClient.GetAsync(Constants.APIUrl + "cal/new");
+            try
+            {
+                string response = await apiResponse.Content.ReadAsStringAsync();
+                response = "{\"data\":" + response + "}";
+                JObject jObResponse = JObject.Parse(response);
+                lsMessage = JsonConvert.DeserializeObject<List<Calculation>>(jObResponse["data"].ToString());
+            }
+            catch (Exception ex)
+            {
+                lsMessage = null;
+            }
+            return View(lsMessage);
+        }
         public async Task<IActionResult> Delte(int id)
         {
             HttpClient httpClient = new HttpClient();

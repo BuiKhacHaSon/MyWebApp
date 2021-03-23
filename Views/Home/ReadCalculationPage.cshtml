@@ -1,0 +1,140 @@
+﻿@model IEnumerable<MyWebApp.Models.Calculation>
+
+@{
+    ViewData["Title"] = "ReadCalculationPage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>ReadCalculationPage</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NameA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DoBA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FavoriteA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NameB)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DoBB)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FavoriteB)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Agent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsCalculated)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Result)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Message)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedAt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsRead)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DoBA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FavoriteA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DoBB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FavoriteB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Agent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsCalculated)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Result)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Message)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsRead)
+            </td>
+            <td>
+                <button class="btn btn-primary" onclick="Delete(@item.Id)">Xóa</button>| |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                <button class="btn btn-primary" onclick="CheckRead(@item.Id)">Read</button>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<script>
+    function Delete(id) {
+        var dataJSON = {};
+        $.ajax({
+            type: 'DELETE',
+            url: 'https://api.buikhachason.com/cal/' + id,
+            dataType: 'json',
+            data: JSON.stringify(dataJSON),
+            contentType: "application/json",
+            complete: function (jqXHR, status) {
+                alert("Xóa được rồi đó ^^");
+            },
+            error: function (ex) {
+                alert(ex.responseText);
+            }
+        });
+    }
+    function CheckRead(id) {
+        var dataJSON = {};
+        $.ajax({
+            type: 'PUT',
+            url: 'https://api.buikhachason.com/cal/' + id,
+            dataType: 'json',
+            data: JSON.stringify(dataJSON),
+            contentType: "application/json",
+            complete: function (jqXHR, status) {
+                alert("Check được rồi đó ^^");
+            },
+            error: function (ex) {
+                alert(ex.responseText);
+            }
+        });
+    }
+</script>

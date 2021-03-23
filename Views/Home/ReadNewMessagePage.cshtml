@@ -91,7 +91,7 @@
             dataType: 'json',
             data: JSON.stringify(dataJSON),
             contentType: "application/json",
-            succes: function (data) {
+            complete: function (jqXHR, status) {
                 alert("Xóa được rồi đó ^^");
             },
             error: function (ex) {
@@ -108,7 +108,7 @@
             dataType: 'json',
             data: JSON.stringify(dataJSON),
             contentType: "application/json",
-            succes: function (data) {
+            complete: function (jqXHR, status) {
                 alert("Check được rồi đó ^^");
             },
             error: function (ex) {
