@@ -38,7 +38,7 @@ namespace MyWebApp.Controllers
         {
             List<Message> lsMessage = new List<Message>();
             HttpClient httpClient = new HttpClient();
-            var apiResponse = await httpClient.GetAsync(Constants.APIUrl + "mesmes");
+            var apiResponse = await httpClient.GetAsync(Constants.APIUrl + "mes/mes");
             try
             {
                 string response = await apiResponse.Content.ReadAsStringAsync();
