@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using MyWebApp.Infrastructure;
 using MyWebApp.Models;
+using MyWebApp.Services;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
@@ -17,14 +19,20 @@ namespace MyWebApp.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        public IBackgroundTaskQueue _queue { get; }
+        private readonly IServiceScopeFactory _serviceScopeFactory;
+        private readonly IEmailService emailService;
+        public HomeController(ILogger<HomeController> logger, IBackgroundTaskQueue queue, IServiceScopeFactory serviceScopeFactory, IEmailService emailService)
         {
             _logger = logger;
+            _queue = queue;
+            _serviceScopeFactory = serviceScopeFactory;
+            this.emailService = emailService;
         }
 
         public IActionResult Index()
         {
+            ViewData["Title"] = "Hora hora";
             return View();
         }
 
@@ -51,7 +59,7 @@ namespace MyWebApp.Controllers
                 JObject jObResponse = JObject.Parse(response);
                 lsMessage = JsonConvert.DeserializeObject<List<Message>>(jObResponse["data"].ToString());
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 lsMessage = null;
             }
@@ -130,10 +138,74 @@ namespace MyWebApp.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        [Route("feedback")]
+        [HttpPost]
+        public IActionResult SendEmail([FromBody]FeedbackRequest feedback)
+        {
+            try
+            {
+                this.emailService.Notification(feedback.Name, feedback.Email, feedback.Title, feedback.Message);
+                return new OkObjectResult( new { response = "Ok" });
+            }
+            catch (Exception ex)
+            {
+                return new BadRequestObjectResult(ex);
+            }
+        }
+
+        [Route("dos")]
+        [HttpGet]
+        public IActionResult Get()
+        {
+            _queue.QueueBackgroundWorkItem(async token =>
+            {
+                using (var scope = _serviceScopeFactory.CreateScope())
+                {
+                    var scopedServices = scope.ServiceProvider;
+                    int j = 1000;
+
+                    for (int i = 0; i < j; i++)
+                    {
+                        Console.WriteLine(i);
+                    }
+
+
+                }
+                await Task.Delay(TimeSpan.FromSeconds(0), token);
+            });
+            return Ok("In progress..");
+        }
+        [Route("stop")]
+        [HttpGet]
+        public IActionResult Stop()
+        {
+
+            return Ok("Stopped");
+        }
+
+        [Route("test")]
+        [HttpGet]
+        public IActionResult Test()
+        {
+            ViewBag.Tittle = "tit tle moi ne";
+            return PartialView();
+        }
+
+
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
+
+    public class FeedbackRequest
+    {
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public string Title { get; set; }
+        public string Message { get; set; }
+    }
+
 }

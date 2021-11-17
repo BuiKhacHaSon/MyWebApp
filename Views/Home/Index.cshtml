@@ -1,165 +1,686 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    Layout = null;
 }
 
-<div class="text-center">
-    <h1 class="display-4">This is just a beginning</h1>
-    <p>我是小宝贝</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <div class="container pt-3 pb-3">
-        <div>
-            <h3 class="display-text">Tính độ mức độ hòa hợp</h3>
+    <title>Bùi Khắc Hà Sơn</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <!-- Fonts -->
+    <link rel="stylesheet" type="text/css" href="assets/fonts/font-awesome.min.css">
+    <!-- Icon -->
+    <link rel="stylesheet" type="text/css" href="assets/fonts/simple-line-icons.css">
+    <!-- Slicknav -->
+    <link rel="stylesheet" type="text/css" href="assets/css/slicknav.css">
+    <!-- Menu CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/menu_sideslide.css">
+    <!-- Slider CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/slide-style.css">
+    <!-- Nivo Lightbox -->
+    <link rel="stylesheet" type="text/css" href="assets/css/nivo-lightbox.css">
+    <!-- Animate -->
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+    <!-- Main Style -->
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <!-- Responsive Style -->
+    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+    <!-- Header Area wrapper Starts -->
+    <header id="header-wrap">
+        <!-- Navbar Start -->
+        <nav class="navbar navbar-expand-lg fixed-top scrolling-navbar indigo">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        <span class="icon-menu"></span>
+                        <span class="icon-menu"></span>
+                        <span class="icon-menu"></span>
+                    </button>
+                    <a href="index.html" class="navbar-brand"><img src="assets/img/logo.png" alt=""></a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-navbar">
+                    <ul class="onepage-nev navbar-nav mr-auto w-100 justify-content-end clearfix">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#hero-area">
+                                Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">
+                                Giới thiệu
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#services">
+                                Sở thích
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#resume">
+                                Học vấn &amp; Kinh nghiệm
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#portfolios">
+                                Dự án
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">
+                                Liên hệ
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Start -->
+            <ul class="onepage-nev mobile-menu">
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+                <li>
+                    <a href="#about">Giới thiệu</a>
+                </li>
+                <li>
+                    <a href="#services">Sở thích</a>
+                </li>
+                <li>
+                    <a href="#resume">Học vấn &amp; Kinh nghiệm</a>
+                </li>
+                <li>
+                    <a href="#portfolio">Dự án</a>
+                </li>
+                <li>
+                    <a href="#contact">Liên hệ</a>
+                </li>
+            </ul>
+            <!-- Mobile Menu End -->
+        </nav>
+        <!-- Navbar End -->
+        <!-- Hero Area Start -->
+        <div id="hero-area" class="hero-area-bg">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 text-center">
+                        <div class="contents">
+                            <h5 class="script-font wow fadeInUp" data-wow-delay="0.2s">Hola! This is</h5>
+                            <h2 class="head-title wow fadeInUp" data-wow-delay="0.4s">Bùi Khắc Hà Sơn</h2>
+                            <p class="script-font wow fadeInUp" data-wow-delay="0.6s">Fresher Web Developer &amp; a Scoundrel</p>
+                            <ul class="social-icon wow fadeInUp" data-wow-delay="0.8s">
+                                <li>
+                                    <a class="facebook" href="https://www.facebook.com//bui.khac.ha.son" target="_blank"><i class="icon-social-facebook"></i></a>
+                                </li>
+                                <li>
+                                    <a class="twitter" href="https://twitter.com/buikhachason98" target="_blank"><i class="icon-social-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a class="instagram" href="https://www.instagram.com/thebkhs" target="_blank"><i class="icon-social-instagram"></i></a>
+                                </li>
+                                <li>
+                                    <a class="linkedin" href="https://www.linkedin.com/in/bui-khac-ha-son" target="_blank"><i class="icon-social-linkedin"></i></a>
+                                </li>
+                                <li>
+                                    <a class="google" href="mailto:buikhachason@gmail.com" target="_blank"><i class="icon-social-google"></i></a>
+                                </li>
+                            </ul>
+                            <div class="header-button wow fadeInUp" data-wow-delay="1s">
+
+                                <a id="audiobtn" onClick="playAudio()" class="btn btn-common">Bật một chút nhạc ▶️ </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <form>
-            <div class="container border">
-                <h4 class="display-text" for="form1">Thông tin <strong>của bạn</strong></h4>
-                <div class="form-group" id="form1">
-                    <label for="name1">Tên của bạn: </label>
-                    <input type="text" class="form-control" id="name1" placeholder="Họ và Tên đầy đủ">
-                </div>
-                <div class="form-group">
-                    <label for="dob1">Ngày sinh: </label>
-                    <input type="text" class="form-control" id="dob1" placeholder="01/01/2021">
-                </div>
-                <div class="form-group">
-                    <label for="favorite1">Một trong những điều bạn thích nhất: </label>
-                    <input type="text" class="form-control" id="favorite1" placeholder="VD: Ăn, Ngủ, v.v..">
-                </div>
-            </div>
-            <div class="container border">
-                <h4 class="display-text" for="form2">Thông tin của <strong>nửa kia</strong></h4>
-                <div class="form-group" id="form1">
-                    <label for="name2">Tên của ngưới đó: </label>
-                    <input type="text" class="form-control" id="name2" placeholder="Họ và Tên đầy đủ">
-                </div>
-                <div class="form-group">
-                    <label for="dob2">Ngày sinh: </label>
-                    <input type="text" class="form-control" id="dob2" placeholder="01/01/2021">
-                </div>
-                <div class="form-group">
-                    <label for="favorite2">Một trong những điều bạn biết người ấy thích nhất: </label>
-                    <input type="text" class="form-control" id="favorite2" placeholder="VD: Ăn, Ngủ, v.v..">
-                </div>
-            </div>
-            
-        </form>
-        <div class="container pt-2 pb-2">
-        <button class="btn btn-primary" id="btnCalculate">Tính ngay</button>
-            </div>
-        <div class="container" id="result">
+        <!-- Hero Area End -->
 
+    </header>
+    <!-- Header Area wrapper End -->
+    <!-- About Section Start -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="img-thumb wow fadeInLeft" data-wow-delay="0.3s">
+                        <img class="img-fluid" src="assets/img/about/about-1.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="profile-wrapper wow fadeInRight" data-wow-delay="0.3s">
+                        <h3>你好!</h3>
+                        <p>
+                            Tôi là một lập trình viên quèn. Đây đơn giản chỉ là một websiste giới thiệu về bản thân.
+                            Không có chứa gì đặc biệt ở đây ^^
+                        </p>
+                        <div class="about-profile">
+                            <ul class="admin-profile">
+                                <li><span class="pro-title"> Họ &amp; Tên </span> <span class="pro-detail">Bùi Khắc Hà Sơn</span></li>
+                                <li><span class="pro-title"> Tuổi </span> <span class="pro-detail">Chắc là 23</span></li>
+                                <li><span class="pro-title"> Kinh nghiệm </span> <span class="pro-detail">0 năm</span></li>
+                                <li><span class="pro-title"> Quốc tịch </span> <span class="pro-detail">Việt Nam</span></li>
+                                <li><span class="pro-title"> Địa chỉ </span> <span class="pro-detail">Nghĩa Đàn, Nghệ An</span></li>
+                                <li><span class="pro-title"> e-mail </span> <span class="pro-detail">buikhachason@gmail.com</span></li>
+                                <li><span class="pro-title"> SDT </span> <span class="pro-detail">+84 394 *** 777</span></li>
+                                <li><span class="pro-title"> Tình trạng </span> <span class="pro-detail">Độc thân + Thất nghiệp</span></li>
+                            </ul>
+                        </div>
+                        @*<a href="#" class="btn btn-common"><i class="icon-paper-clip"></i> Download Resume</a>
+                            <a href="#" class="btn btn-danger"><i class="icon-speech"></i> Contact Me</a>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Section End -->
+    <!-- Services Section Start -->
+    <section id="services" class="services section-padding">
+        <h2 class="section-title wow flipInX" data-wow-delay="0.4s">Sở thích</h2>
+        <div class="container">
+            <div class="row">
+                <!-- Services item -->
+                <div class="col-md-6 col-lg-3 col-xs-12">
+                    <div class="services-item wow fadeInDown" data-wow-delay="0.3s">
+                        <div class="icon">
+                            <i class="icon-settings"></i>
+                        </div>
+                        <div class="services-content">
+                            <h3><a href="#">Công nghệ</a></h3>
+                            <p>Tôi khác quan tâm đến các vấn đề về công nghệ nói chung và công nghệ thông tin nói riêng. Thật tuyệt vời khi sống trong một thời đại công nghệ.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Services item -->
+                <div class="col-md-6 col-lg-3 col-xs-12">
+                    <div class="services-item wow fadeInDown" data-wow-delay="0.6s">
+                        <div class="icon">
+                            <i class="icon-music-tone"></i>
+                        </div>
+                        <div class="services-content">
+                            <h3><a href="#">Âm nhạc &amp; Điện ảnh</a></h3>
+                            <p>Tôi đặc biệt yêu thích các bộ môn nghệ thuật: Phim ảnh, Âm nhạc, Hội họa và Văn học. Khi rảnh tôi thường "chill with my guitar</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Services item -->
+                <div class="col-md-6 col-lg-3 col-xs-12">
+                    <div class="services-item wow fadeInDown" data-wow-delay="0.9s">
+                        <div class="icon">
+                            <i class="icon-book-open"></i>
+                        </div>
+                        <div class="services-content">
+                            <h3><a href="#">Kiến thức</a></h3>
+                            <p>Tôi có đọc sách, tuy không nhiều nhưng tôi thực sự bị cuốn vào chúng. Kiến thức là vô vàn và việc đắm chìm vào nó thực sự sáng suốt. Tôi luôn quan tâm đến khoa học &amp; công nghệ</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Services item -->
+                <div class="col-md-6 col-lg-3 col-xs-12">
+                    <div class="services-item wow fadeInDown" data-wow-delay="1.2s">
+                        <div class="icon">
+                            <i class="icon-game-controller"></i>
+                        </div>
+                        <div class="services-content">
+                            <h3><a href="#">Game &amp; Động vật</a></h3>
+                            <p>Tôi cũng thích khoa học tự nhiên. Tôi thích nuôi động vật như chó mèo. Và tất nhiên tôi cũng thích chơi Game</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services Section End -->
+    <!-- Resume Section Start -->
+    <div id="resume" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="education wow fadeInRight" data-wow-delay="0.3s">
+                        <ul class="timeline">
+                            <li>
+                                <i class="icon-graduation"></i>
+                                <h2 class="timelin-title">Education</h2>
+                            </li>
+                            <li>
+                                <div class="content-text">
+                                    <h3 class="line-title">THCS Nghĩa Lâm</h3>
+                                    <span>2009 - 2013</span>
+                                    <p class="line-text">Là nhân tố học lực trung bình.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="content-text">
+                                    <h3 class="line-title">THPT Thái Hòa &amp; THPT Nguyễn Duy Trinh</h3>
+                                    <span>2013 - 2014 &amp; 2014-2016</span>
+                                    <p class="line-text">Là nhân tố có học lực kém. Kém đén mức bị gia đình chuyển trường :)</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="content-text">
+                                    <h3 class="line-title">HUTECH University - HCM</h3>
+                                    <span>2016 - 2020</span>
+                                    <p class="line-text">Sinh viên có học lực loại giỏi.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="experience wow fadeInRight" data-wow-delay="0.6s">
+                        <ul class="timeline">
+                            <li>
+                                <i class="icon-briefcase"></i>
+                                <h2 class="timelin-title">Experience</h2>
+                            </li>
+                            <li>
+                                <div class="content-text">
+                                    <h3 class="line-title">TigerNet Wifi Marketing</h3>
+                                    <span>Jul-Sep 2020</span>
+                                    <p class="line-text">Back-end developer: chịu trách nghiệm hoàn thành hệ thống API đơn giản dùng cho cả nội bộ lẫn khách hàng.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="content-text">
+                                    <h3 class="line-title">Paygle</h3>
+                                    <span>Oct 2020 - Jan 2021</span>
+                                    <p class="line-text">Maintain và Upgrade dự án Paygle từ Melbourne - Úc.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="content-text">
+                                    <h3 class="line-title">Deizee</h3>
+                                    <span>2021 - Present</span>
+                                    <p class="line-text">Dự án cá nhân: đảm nhận tất cả.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    <!-- Resume Section End -->
+    <!-- Portfolio Section -->
+    <section id="portfolios" class="section-padding">
+        <!-- Container Starts -->
+        <div class="container">
+            <h2 class="section-title wow flipInX" data-wow-delay="0.4s">Dự án</h2>
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Portfolio Controller/Buttons -->
+                    <div class="controls text-center">
+                        <a class="filter active btn btn-common" data-filter="all">
+                            Tất cả
+                        </a>
+                        <a class="filter btn btn-common" data-filter=".backend">
+                            Back-end
+                        </a>
+                        <a class="filter btn btn-common" data-filter=".maintain">
+                            Maintain
+                        </a>
+                        <a class="filter btn btn-common" data-filter=".indiviadual">
+                            Individual
+                        </a>
+                    </div>
+                    <!-- Portfolio Controller/Buttons Ends-->
+                </div>
 
-    <div class="container">
-        <img src="~/me.jpg" style="height: 100%; width: 100%;" />
-    </div>
-    <div class="container pt-3">
-        <h5>Nè hỏi thiệt nhé! Ăn gì mà đẹp zợ? ^^</h5>
-    </div>
-
-    <div class="container pt-3">
-        <h3>Bạn muốn nói với tôi điều gì?</h3>
-        <form>
-            <div class="form-group">
-                <label for="name">Bạn là ai?</label>
-                <input type="text" class="form-control" id="name" placeholder="Tên hoặc danh xưng - có thể để trống">
+                <!-- Portfolio Recent Projects -->
+                <div id="portfolio" class="row wow fadeInDown" data-wow-delay="0.4s">
+                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix backend">
+                        <div class="portfolio-item">
+                            <div class="shot-item">
+                                <img src="assets/img/gallery/tiger.png" alt="" />
+                                <div class="overlay">
+                                    <div class="icons">
+                                        <a class="lightbox preview" href="assets/img/gallery/tiger.PNG">
+                                            <i class="icon-eye"></i>
+                                        </a>
+                                        <a class="link" href="https://wifi2.marketing.be.demo-amit.com" target="_blank">
+                                            <i class="icon-link"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix indiviadual">
+                        <div class="portfolio-item">
+                            <div class="shot-item">
+                                <img src="assets/img/gallery/deizee.png" alt="" />
+                                <div class="overlay">
+                                    <div class="icons">
+                                        <a class="lightbox preview" href="assets/img/gallery/deizee.png">
+                                            <i class="icon-eye"></i>
+                                        </a>
+                                        <a class="link" href="https://deizee.com" target="_blank">
+                                            <i class="icon-link"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix maintain">
+                        <div class="portfolio-item">
+                            <div class="shot-item">
+                                <img src="assets/img/gallery/paygle.PNG" alt="" />
+                                <div class="overlay">
+                                    <div class="icons">
+                                        <a class="lightbox preview" href="assets/img/gallery/paygle.PNG">
+                                            <i class="icon-eye"></i>
+                                        </a>
+                                        <a class="link" href="https://www.paygle.com/" target="_blank">
+                                            <i class="icon-link"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix indiviadual">
+                        <div class="portfolio-item">
+                            <div class="shot-item">
+                                <img src="assets/img/gallery/lapmang.png" alt="" />
+                                <div class="overlay">
+                                    <div class="icons">
+                                        <a class="lightbox preview" href="assets/img/gallery/lapmang.png">
+                                            <i class="icon-eye"></i>
+                                        </a>
+                                        <a class="link" href="https://lapmangviettel247.com/" target="_blank">
+                                            <i class="icon-link"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @*
+                        <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development">
+                            <div class="portfolio-item">
+                                <div class="shot-item">
+                                    <img src="assets/img/gallery/img-5.jpg" alt="" />
+                                    <div class="overlay">
+                                        <div class="icons">
+                                            <a class="lightbox preview" href="assets/img/gallery/img-5.jpg">
+                                                <i class="icon-eye"></i>
+                                            </a>
+                                            <a class="link" href="#">
+                                                <i class="icon-link"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix print design">
+                            <div class="portfolio-item">
+                                <div class="shot-item">
+                                    <img src="assets/img/gallery/img-6.jpg" alt="" />
+                                    <div class="overlay">
+                                        <div class="icons">
+                                            <a class="lightbox preview" href="assets/img/gallery/img-6.jpg">
+                                                <i class="icon-eye"></i>
+                                            </a>
+                                            <a class="link" href="#">
+                                                <i class="icon-link"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>*@
+                </div>
             </div>
-            <div class="form-group">
-                <label for="bodyMessage">Điều mà bạn muốn nói là gì?</label>
-                <textarea class="form-control" id="bodyMessage" rows="3"></textarea>
+        </div>
+        <!-- Container Ends -->
+    </section>
+    <!-- Portfolio Section Ends -->
+    <!-- Counter Area Start-->
+    <!--<section class="counter-section section-padding">
+        <div class="container">
+            <div class="row">-->
+    <!-- Counter Item -->
+    <!--<div class="col-md-3 col-sm-6 work-counter-widget text-center">
+        <div class="counter wow fadeInDown" data-wow-delay="0.3s">
+            <div class="icon"><i class="icon-briefcase"></i></div>
+            <div class="counterUp">250</div>
+            <p>Project Working</p>
+        </div>
+    </div>-->
+    <!-- Counter Item -->
+    <!--<div class="col-md-3 col-sm-6 work-counter-widget text-center">
+        <div class="counter wow fadeInDown" data-wow-delay="0.6s">
+            <div class="icon"><i class="icon-check"></i></div>
+            <div class="counterUp">950</div>
+            <p>Project Done</p>
+        </div>
+    </div>-->
+    <!-- Counter Item -->
+    <!--<div class="col-md-3 col-sm-6 work-counter-widget text-center">
+        <div class="counter wow fadeInDown" data-wow-delay="0.9s">
+            <div class="icon"><i class="icon-diamond"></i></div>
+            <div class="counterUp">150</div>
+            <p>Awards Received</p>
+        </div>
+    </div>-->
+    <!-- Counter Item -->
+    <!--<div class="col-md-3 col-sm-6 work-counter-widget text-center">
+                    <div class="counter wow fadeInDown" data-wow-delay="1.2s">
+                        <div class="icon"><i class="icon-heart"></i></div>
+                        <div class="counterUp">299</div>
+                        <p>Happy Clients</p>
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>-->
+    <!-- Counter Area End-->
+    <!-- Contact Section Start -->
+    <section id="contact" class="section-padding">
+        <div class="contact-form">
+            <div class="container">
+                <div class="row contact-form-area wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="col-md-6 col-lg-6 col-sm-12">
+                        <div class="contact-block">
+                            <h2>Để lại tin nhắn hoặc yêu cầu:</h2>
 
-        </form>
-        <button class="btn btn-primary" onclick="SendMessage()" id="btnSend">Gửi</button>
-    </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="sendname" name="name" placeholder="Họ &amp; Tên" required data-error="Vui lòng điền họ tên đầy đủ!">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" placeholder="Email" id="sendemail" class="form-control" name="email" required data-error="Tôi cần một phương thức để liên lạc với bạn!">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input type="text" placeholder="Tiêu đề" id="sendtitle" class="form-control" required data-error="Hãy để lại một tiêu đề!">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <textarea class="form-control" id="sendmessage" placeholder="Nội dung" rows="5" data-error="Vui lòng nói rõ hơn nội dung của bạn!" required></textarea>
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                        <div class="submit-button" id="submit-btn">
+                                            <button class="btn btn-common" id="sendbtn">Gủi đến tôi</button>
 
+                                        </div>
+                                    </div>
+                                </div>
 
-</div>
-<script>
-    let ip = 'hi';
-    $(document).ready(function () {
-        $.getJSON("https://api.ipify.org?format=json",
-            function (data) {
-                ip = data.ip;
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-sm-12">
+                        <div class="footer-right-area wow fadeIn">
+                            <h2>Contact Address</h2>
+                            <div class="footer-right-contact">
+                                <div class="single-contact">
+                                    <div class="contact-icon">
+                                        <i class="fa fa-map-marker"></i>
+                                    </div>
+                                    <p>Nghĩa Đàn, Nghệ An</p>
+                                </div>
+                                <div class="single-contact">
+                                    <div class="contact-icon">
+                                        <i class="fa fa-envelope"></i>
+                                    </div>
+                                    <p><a href="mailto:buikhachason98@gmail.com">buikhachason98@gmail.com</a></p>
+                                    <p><a href="mailto:buikhachason@gmail.com">buikhachason@gmail.com</a></p>
+                                </div>
+                                <div class="single-contact">
+                                    <div class="contact-icon">
+                                        <i class="fa fa-phone"></i>
+                                    </div>
+                                    <p><a href="#">+ (84) 394 960 777</a></p>
+                                    @*<p><a href="#">+ (00) 123 344 789</a></p>*@
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section End -->
+    <!-- Footer Section Start -->
+    <footer class="footer-area section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="footer-text text-center wow fadeInDown" data-wow-delay="0.3s">
+                        <ul class="social-icon">
+                            <li>
+                                <a class="facebook" href="https://www.facebook.com//bui.khac.ha.son" target="_blank"><i class="icon-social-facebook"></i></a>
+                            </li>
+                            <li>
+                                <a class="twitter" href="https://twitter.com/buikhachason98" target="_blank"><i class="icon-social-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a class="instagram" href="https://www.instagram.com/thebkhs" target="_blank"><i class="icon-social-instagram"></i></a>
+                            </li>
+                            <li>
+                                <a class="instagram" href="https://www.linkedin.com/in/bui-khac-ha-son" target="_blank"><i class="icon-social-linkedin"></i></a>
+                            </li>
+                            <li>
+                                <a class="instagram" href="mailto:buikhachason@gmail.com" target="_blank"><i class="icon-social-google"></i></a>
+                            </li>
+                        </ul>
+                        <p>Copyright © 2021 BKHS - Template from UIdeck All Right Reserved, Meet me</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+    <!-- Go to Top Link -->
+    <a href="#" class="back-to-top">
+        <i class="icon-arrow-up"></i>
+    </a>
 
-            }) 
-    });
-    
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="assets/js/jquery-min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.mixitup.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <script src="assets/js/waypoints.min.js"></script>
+    <script src="assets/js/wow.js"></script>
+    <script src="assets/js/jquery.nav.js"></script>
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="assets/js/nivo-lightbox.js"></script>
+    <script src="assets/js/jquery.slicknav.js"></script>
+    <script src="assets/js/main.js"></script>
+    @*<script src="assets/js/form-validator.min.js"></script>*@
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.79/jquery.form-validator.min.js"></script>
+    @*<script src="assets/js/contact-form-script.min.js"></script>*@
 
-    function SendMessage() {
-        let name = document.getElementById("name").value;
-        let bodyMessage = document.getElementById("bodyMessage").value;
-        var dataJSON = { Name: name, BodyMessage: bodyMessage, Agent: ip };
-        console.log(name, bodyMessage);
-        if (bodyMessage == "") {
-            alert("Không thể để trống Tin nhắn được");
-            return false;
+    @*<script src="assets/js/map.js"></script>*@
+    <script>
+        var audio = new Audio('/backgroudaudio.mp3');
+        function playAudio() {
+            var audiobtn = document.getElementById('audiobtn');
+            audio.play();
+            audiobtn.innerHTML = "Tạm dừng phát nhạc ⏸";
+            audiobtn.setAttribute('onClick', "pauseAudio()");
         }
-
-        $.ajax({
-            type: 'POST',
-            url: 'https://api.buikhachason.com/mes',
-            dataType: 'json',
-            data: JSON.stringify(dataJSON),
-            contentType: "application/json",
-            complete: function (data) {
-                console.log(ip);
-                alert("Gửi được rồi đó ^^");
-            },
-            error: function (ex) {
-                alert(ex.responseText);
-            }
-        });
-    }
-
-    $("#btnCalculate").on("click", function () {
-        Calculate();
-    });
-
-    function Calculate() {
-        let BaseAPIUrl = 'https://api.buikhachason.com/';
-        let name1 = document.getElementById("name1").value;
-        let dob1 = document.getElementById("dob1").value;
-        let fav1 = document.getElementById("favorite1").value;
-        let name2 = document.getElementById("name2").value;
-        let dob2 = document.getElementById("dob2").value;
-        let fav2 = document.getElementById("favorite2").value;
-        if (name1 == ""
-            || fav1 == ""
-            || dob1 == ""
-            || name2 == ""
-            || fav2 == ""
-            || dob2 == ""
-        ) {
-            alert("Nhập cho đầy đủ thông tin đi pa!");
-            return false;
+        function pauseAudio() {
+            var audiobtn = document.getElementById('audiobtn');
+            audio.pause();
+            audiobtn.innerHTML = "Tiếp tục phát nhạc ▶️";
+            audiobtn.setAttribute('onClick', "playAudio()");
         }
-        var dataJSON = {
-            NameA: name1, DoBA: dob1, FavoriteA: fav1,
-            NameB: name2, DoBB: dob2, FavoriteB: fav2
-            , Agent: ip
-        };
-        console.log(dataJSON);
-        $.ajax({
-            type: 'POST',
-            url: 'https://api.buikhachason.com/cal',
-            dataType: 'json',
-            data: JSON.stringify(dataJSON),
-            contentType: "application/json",
-            complete: function (jqXHR, status) {
-                $("#result div").remove();
-                var data = $.parseJSON(jqXHR.responseText);
-                var row = `<div class="border"><h5>Kết quả: ` + data.result + `%</h5></div><div class="border"><p>` + data.message + `</p></div>`;
-                    $('#result').append(row);
-                console.log(row);
-                
-                    console.log(data);
-            },
-            error: function (ex) {
-                alert(ex.responseText);
-            }
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#sendbtn").click(function () {
+                $('#sendname').css("border", "1px solid #e1e1e1");
+                $('#sendemail').css("border", "1px solid #e1e1e1");
+                $('#sendtitle').css("border", "1px solid #e1e1e1");
+                $('#sendmessage').css("border", "1px solid #e1e1e1");
+                if ($('#sendname').val() == "" || $('#sendname').val() == null) { $('#sendname').css( "border", "2px solid #ff5016" ); return false; }
+                if ($('#sendemail').val() == "" || $('#sendemail').val() == null) { $('#sendemail').css("border", "2px solid #ff5016"); return false; }
+                if ($('#sendtitle').val() == "" || $('#sendtitle').val() == null) { $('#sendtitle').css("border", "2px solid #ff5016"); return false;}
+                if ($('#sendmessage').val() == "" || $('#sendmessage').val() == null) { $('#sendmessage').css("border", "2px solid #ff5016"); return false; }
+                $('#submit-btn button').remove();
+                $('#submit-btn').append(`<button id="sendbtn-loading" class="buttonload btn btn-common"><i class="fa fa-circle-o-notch fa-spin"></i> Đang gửi...</button>`);
+                var data = {
+                    name: $('#sendname').val(),
+                    email: $('#sendemail').val(),
+                    title: $('#sendtitle').val(),
+                    message: $('#sendmessage').val()
+                };
+                $.ajax({
+                    url: '/feedback',
+                    contentType: 'application/json',
+                    type: "POST",
+                    data: JSON.stringify(data),
+                    dataType: "JSON",
+                    traditional: true,
+                    success: function (data) {
+                        console.log("done");
+                        $('#sendbtn-loading').remove();
+                        $('#submit-btn').append(`
+                                <button id="sendbtn-ok" class="btn btn-common"><i class="fa fa-check"></i> Đã gửi</button>
+                                    `);
+                    },
+                    statusCode: {
+                        400: function (data) {
+                            console.log("fail");
+                            $('#sendbtn-loading').remove();
+                            $('#submit-btn').append(`
+                                <button id="sendbtn-ok" class="btn btn-common"><i class="fa fa-exclamation-triangle"></i> Lỗi</button>
+                                    `);
+                        }
+                    }
+
+                });
+            });
         });
-    }
-</script>
+    </script>
+
+</body>
+</html>

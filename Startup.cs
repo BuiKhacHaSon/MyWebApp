@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MyWebApp.Infrastructure;
+using MyWebApp.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +29,15 @@ namespace MyWebApp
             services.AddControllersWithViews();
 
             services.AddRazorPages().AddRazorRuntimeCompilation();
+
+            services.AddScoped<IEmailService, EmailService>();
+            services.Configure<EmailSettings>(Configuration.GetSection("EmailSettings"));
+            services.Configure<SMTPSettings>(Configuration.GetSection("SmtpSettings"));
+
+            services.AddHostedService<QueuedHostedService>();
+            services.AddSingleton<IBackgroundTaskQueue, BackgroundTaskQueue>();
+
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
