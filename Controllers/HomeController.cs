@@ -137,7 +137,7 @@ namespace MyWebApp.Controllers
             var apiResponse = await httpClient.DeleteAsync(Constants.APIUrl + "mes/" + id.ToString());
             return RedirectToAction("Index", "Home");
         }
-
+        
         [Route("feedback")]
         [HttpPost]
         public IActionResult SendEmail([FromBody]FeedbackRequest feedback)
@@ -145,7 +145,7 @@ namespace MyWebApp.Controllers
             try
             {
                 this.emailService.Notification(feedback.Name, feedback.Email, feedback.Title, feedback.Message);
-                return new OkObjectResult( new { response = "Ok" });
+                return Ok();
             }
             catch (Exception ex)
             {

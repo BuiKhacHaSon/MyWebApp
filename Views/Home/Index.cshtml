@@ -676,6 +676,15 @@
                                     `);
                         }
                     }
+                    ,
+                    statusCode: {
+                        200: function (data) {
+                            $('#sendbtn-loading').remove();
+                            $('#submit-btn').append(`
+                                <button id="sendbtn-ok" class="btn btn-common"><i class="fa fa-check"></i> Đã gửi</button>
+                                    `);
+                        }
+                    }
 
                 });
             });
