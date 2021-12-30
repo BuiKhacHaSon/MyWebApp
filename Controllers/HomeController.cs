@@ -149,7 +149,7 @@ namespace MyWebApp.Controllers
             }
             catch (Exception ex)
             {
-                return new BadRequestObjectResult(ex);
+                return new BadRequestObjectResult( new { message = ex.Message });
             }
         }
 
